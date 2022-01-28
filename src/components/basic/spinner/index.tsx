@@ -8,7 +8,7 @@ interface ISpinnerProps {
 
 const Spinner = function Spinner({ className }: ISpinnerProps): JSX.Element {
   return (
-    <div className={clsx(styles.spinner, className)}>
+    <div className={clsx(styles.spinner, className)} role="status">
       <div />
       <div />
     </div>
