@@ -22,6 +22,7 @@ const Information = function Information({
   music,
 }: IInfromationProps): JSX.Element {
   const navigate = useNavigate();
+  const getHashtagKey = (hashtag: IHashtag) => +hashtag.id * Math.random();
 
   const onAuthorClick = () => {
     navigate(Routes.USERS(author.name));
@@ -65,7 +66,7 @@ const Information = function Information({
           <p className={styles.text}>{description.text}</p>
           <ul className={styles.hashtags}>
             {description.hashtags.map((hashtag) => (
-              <li key={hashtag.id}>
+              <li key={getHashtagKey(hashtag)}>
                 <Hashtag hashtag={hashtag} />
               </li>
             ))}

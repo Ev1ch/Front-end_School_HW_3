@@ -7,9 +7,10 @@ import TikTukPost from './index';
 
 describe('testing common tiktuk component', () => {
   const tiktuk = TIKTUKS[0];
-  const className = '%className%';
 
   it('check if className prop works', () => {
+    const className = '%className%';
+
     renderWithRouter(<TikTukPost tiktuk={tiktuk} className={className} />);
 
     expect(screen.getByRole('feed')).toHaveClass(className);
