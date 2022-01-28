@@ -1,19 +1,7 @@
-import { API_ROOT, HttpMethods } from 'common';
-import { TRequestArgs, THeader, TBody, IRequestInit } from './types';
+import { HttpMethods } from 'common';
+import { TRequestArgs, THeader, TBody, IRequestInit } from 'api/types';
 
-export const getUrl = ({ endpoint, query }: TRequestArgs): URL => {
-  const url = new URL(endpoint, API_ROOT);
-
-  if (query) {
-    Object.keys(query).forEach((key) => {
-      url.searchParams.append(key, String(query[key]));
-    });
-  }
-
-  return url;
-};
-
-export const getArgs = (args: TRequestArgs): IRequestInit => {
+const getArgs = (args: TRequestArgs): IRequestInit => {
   const headers: THeader = {};
   let body: TBody | null = null;
   const method = args.method || HttpMethods.GET;
@@ -37,3 +25,5 @@ export const getArgs = (args: TRequestArgs): IRequestInit => {
     ...(body ? { body } : {}),
   } as IRequestInit;
 };
+
+export default getArgs;
