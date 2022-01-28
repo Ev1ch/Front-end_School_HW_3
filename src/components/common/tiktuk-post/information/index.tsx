@@ -52,8 +52,13 @@ const Information = function Information({
           >
             {author.name}
           </p>
-          {author.signature && (
-            <FontAwesomeIcon icon={faCheck} className={styles.icon} />
+          {author.verified && (
+            <FontAwesomeIcon
+              icon={faCheck}
+              className={styles.icon}
+              role="status"
+              aria-hidden={false}
+            />
           )}
         </div>
         <div className={styles.description}>

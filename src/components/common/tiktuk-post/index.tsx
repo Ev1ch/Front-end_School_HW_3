@@ -16,7 +16,7 @@ const TikTukPost = function TikTukPost({
   className,
 }: IVideoProps): JSX.Element {
   return (
-    <div className={clsx(styles.tiktuk, className)}>
+    <div className={clsx(styles.tiktuk, className)} role="feed">
       <div className={styles.information}>
         <Information
           author={tiktuk.authorMeta}
