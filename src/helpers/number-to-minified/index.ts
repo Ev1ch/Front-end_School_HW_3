@@ -39,7 +39,7 @@ const convertToMinifiedNumber = (number: number): string => {
         Number.isInteger(dividedNumber)
           ? dividedNumber
           : dividedNumber.toFixed(1)
-      } ${Stages[stage].POSTFIX}`;
+      }${Stages[stage].POSTFIX ? ` ${Stages[stage].POSTFIX}` : ''}`;
 
       return convertedNumber;
     }
