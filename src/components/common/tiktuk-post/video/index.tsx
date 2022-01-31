@@ -8,7 +8,7 @@ interface IVideoProps {
 const Video = function Video({ video }: IVideoProps): JSX.Element {
   return (
     <div className={styles.video}>
-      <video src={video} className={styles.content} controls>
+      <video src={video} className={styles.content} role="button" controls>
         <track kind="captions" />
       </video>
     </div>

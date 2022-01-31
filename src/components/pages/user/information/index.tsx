@@ -21,7 +21,7 @@ const Information = function Information({
   const likesCaption = convertToMinifiedNumber(stats.diggCount);
 
   return (
-    <div className={clsx(styles.information, className)}>
+    <div className={clsx(styles.information, className)} role="main">
       <div className={styles.user}>
         <Avatar image={user.avatarMedium} className={styles.avatar} />
         <div>

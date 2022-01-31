@@ -13,7 +13,7 @@ const Hashtag = function Hashtag({
   className,
 }: IHashtagProps): JSX.Element {
   return (
-    <div className={clsx(styles.hashtag, className)}>
+    <div className={clsx(styles.hashtag, className)} role="link">
       <span>{hashtag.name}</span>
     </div>
   );

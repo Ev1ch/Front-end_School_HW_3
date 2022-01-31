@@ -7,7 +7,11 @@ interface ILogotypeProps {
 }
 
 const Logotype = function Logotype({ className }: ILogotypeProps): JSX.Element {
-  return <p className={clsx(styles.logotype, className)}>Tik Tuk</p>;
+  return (
+    <p className={clsx(styles.logotype, className)} role="img">
+      Tik Tuk
+    </p>
+  );
 };
 
 export default Logotype;

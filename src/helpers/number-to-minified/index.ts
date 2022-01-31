@@ -33,15 +33,13 @@ const convertToMinifiedNumber = (number: number): string => {
   // eslint-disable-next-line
   for (const stage in Stages) {
     const dividedNumber = number / Stages[stage].DIVIDER;
-    console.log('Number', number);
-    console.log('dividedNumber', dividedNumber);
 
     if (number < Stages[stage].MAXIMUM) {
       convertedNumber = `${
         Number.isInteger(dividedNumber)
           ? dividedNumber
           : dividedNumber.toFixed(1)
-      } ${Stages[stage].POSTFIX}`;
+      }${Stages[stage].POSTFIX ? ` ${Stages[stage].POSTFIX}` : ''}`;
 
       return convertedNumber;
     }

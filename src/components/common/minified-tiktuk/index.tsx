@@ -21,7 +21,7 @@ const MinifiedTikTuk = function MinifiedTikTuk({
         {viewsCaption}
       </p>
       <div className={styles.overlay} />
-      <video src={tiktuk.video.playAddr} className={styles.video}>
+      <video src={tiktuk.video.playAddr} className={styles.video} role="button">
         <track kind="captions" />
       </video>
     </div>

@@ -25,7 +25,8 @@ const Avatar = function Avatar({
     <div
       className={clsx(styles.avatar, className)}
       onClick={onClickHandler}
-      role="img"
+      role="link"
+      tabIndex={0}
     >
       <img src={image} alt={alt} className={styles.image} />
     </div>

@@ -17,7 +17,7 @@ const TrendingPage = function TrendingPage({
         <div className="container">
           <ul className={styles.tiktuks}>
             {tiktuks.map((tiktuk: ITikTuk) => (
-              <li key={tiktuk.id}>
+              <li key={tiktuk.id} data-testid="tiktuk">
                 <TikTukPost tiktuk={tiktuk} />
               </li>
             ))}
