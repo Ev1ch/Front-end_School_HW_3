@@ -5,7 +5,7 @@ import { IFeed } from 'domain/feed';
 import * as actions from './actions';
 import * as actionsTypes from './actions-types';
 
-function* getUserWorker({
+export function* getUserWorker({
   payload: { nick },
 }: ReturnType<typeof actions.getUser>) {
   try {

@@ -1,3 +1,4 @@
+import TIKTUKS from 'mocks/tiktuks';
 import reducer from './index';
 import { initialState } from './state';
 import * as actions from './actions';
@@ -11,6 +12,15 @@ describe('test trending reducer', () => {
     expect(reducer(undefined, actions.setTrending({ tiktuks: [] }))).toEqual({
       ...initialState,
       items: [],
+    });
+  });
+
+  it('test add trending action', () => {
+    expect(
+      reducer(undefined, actions.addTrending({ tiktuks: TIKTUKS })),
+    ).toEqual({
+      ...initialState,
+      items: TIKTUKS,
     });
   });
 

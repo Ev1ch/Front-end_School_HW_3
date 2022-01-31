@@ -4,7 +4,7 @@ import { ITikTuk } from 'domain/tiktuk';
 import * as actionsTypes from './actions-types';
 import * as actions from './actions';
 
-function* getTrandingWorker({
+export function* getTrandingWorker({
   payload: { toSet },
 }: ReturnType<typeof actions.getTrending>) {
   try {
@@ -19,7 +19,7 @@ function* getTrandingWorker({
     } else {
       yield put(actions.addTrending({ tiktuks }));
     }
-  } catch {
+  } catch (error) {
     yield put(actions.setError({ isError: true }));
   } finally {
     yield put(actions.setLoading({ isLoading: false }));

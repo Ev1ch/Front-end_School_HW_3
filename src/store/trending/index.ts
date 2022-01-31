@@ -13,6 +13,13 @@ const reducer = createReducer<ITrendingState>(initialState, {
     ...state,
     items: tiktuks,
   }),
+  [actionsTypes.ADD_TRENDING]: (
+    state,
+    { payload: { tiktuks } }: ReturnType<typeof actions.addTrending>,
+  ) => ({
+    ...state,
+    items: [...(state.items || []), ...tiktuks],
+  }),
   [actionsTypes.SET_LOADING]: (
     state,
     { payload: { isLoading } }: ReturnType<typeof actions.setLoading>,
